@@ -1,0 +1,8 @@
+***********Excel worksheet**********
+-select and double click on column =khud adjust kr deta test column mei or wrap test ribbon or hota
+-ctrl+down se ham seedha last value mei pahuch jaate
+-ctrl+a = select kr deta 
+-ctrl+shift+any right/left/down/up=select kr deta poori row or column
+-ctrl+ =insert krta
+-ctrl- =delete krta 
+-double click or F2 click krke= edit kr skte cell mei
