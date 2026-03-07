@@ -182,3 +182,26 @@ sameperiodlastyear()
 14.visual-level filtering
 15.performance best practices
 
+
+***Analyzing and Visualizing with Pivot tables
+1.Freezing panes
+2.Conditional formatting for insights
+3.Introduction to pivot tables
+	KPIs and Hierachies
+	Row,column ,values .filters in pivot tables
+	Drill-Downs,slicers and timelines
+	Grouping by Date or Category
+	Value field settings(Sum,Count,Average)
+	Calulated Fields/Items
+	Building Dashboard-like Pivot Reports
+4.Introduction to visuals
+	Column,line,pie,bar,area,combo
+	histogram,box and whisker,treemap,waterfall,funnel
+	dynamic charts(using dropdowns)
+	formatting charts(axes,labels,colors,data points)
+	sparkling charts
+	KPI visuals and target vs achievements
+
+
+			***************************************				
+
