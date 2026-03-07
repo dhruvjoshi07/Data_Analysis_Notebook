@@ -202,6 +202,11 @@ sameperiodlastyear()
 	sparkling charts
 	KPI visuals and target vs achievements
 
+5.Dashboard Design Principles(layout,colors,flow)
+6.KPI Indicators,Progress bars,traffic lights
+7.Interactivity with Form Controls(Dropdown,Checkboxes)
+
 
 			***************************************				
+
 
