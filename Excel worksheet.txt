@@ -1,0 +1,220 @@
+***********Excel worksheet**********
+
+**basic excel
+-select and double click on column =khud adjust kr deta test column mei or wrap test ribbon or hota
+-ctrl+down se ham seedha last value mei pahuch jaate
+-ctrl+a = select kr deta 
+-ctrl+shift+any right/left/down/up=select kr deta poori row or column
+-ctrl+'+' =insert krta
+-ctrl+'-' =delete krta 
+-double click or F2 click krke= edit kr skte cell mei
+-ctrl + alt+ v=gives paste multiple options like formatting,content etc.
+-'='=yea agar ham kisi cell mei likhe it enabvles arithmetic operations like =1+2 gives 3(independent value)
+-'='(cell referencing)= '=a1b1' yea dependent value hai,jese ham cell mei equal likhe tb cell select kre tb yea 2 cell k sath arithmetic operation perform krega
+-there are 3 types of cell referencing=absolute/mixed/relative
+-Duplicate kisi cell ya series k liye=cell mei end point se pakd kr neeche takk krdo
+-fill =option hota jissay ham automatic cells k baad drag krne pr set hota
+-agar ham arithmetic operation use krte and upcoming values ka automatic ho jayega just select and drag down(relative referencing)
+-$=yea sign lock krne k liye hai like '$b$4' it means relative referencing mei yea formala mei lock ho gya(absolute refercing)
+-ya toh row lock krna ya column lock krna its called mixed referencing
+-don't use merging instead use 'alignment settings' jismei ham centre across selection use krunga by slecting
+
+
+**Excel-based-wrangling
+-Remove duplicates=go to data and then remove duplicates inbuilt option
+-find &replace =option in data where i easily find any text and replace it
+-trim=yea ek option hai jissay extra spaces etc remove kr skte by writing in cell='=TRIM(select cell)'and then drag down
+-hide=by clicking on column the column will hide
+-'=PROPER or '=LOWER'(select cell,drag)'case transformation=yani jo case chota hai bda hai correct krna ussay
+-Data extraction(=RIGHT(CELL,LETTER_COUNT)=agr hammei email se domain nikalne hai toh simply right k elements cell k kitne alphabet choose krkenaye cell mei de dega like @example.com
+-In data extraction to find mid is:=MID(SELECT CELL,START,CHAR_COUNT)ab ismei dikkat hogi range sbki same ho so we use delimeter and fixed width
+	METHOD 1:we go to data and choose text to column and choose delimeter and other @ se 	separate krna and kaha krna it done
+	METHOD 2:we use fixed width by text to column(not good)
+-concate='=d6&" "&e9(hamne 2 cell mila diya) or =CONCAT(D6," ",E9) or =TEXTJOIN(" ",FALSE(empty data k liye ignore krna),D6,E9)(False=nhi krna nd true=krna)(good approach)
+-FLASH FILL=apne aap distinguish kr dega like first name or last name by just writing first one 
+-Appending=rows badana & Merging=columns badhana & consolidating=category data provide summarization btw two columns in data ribbon
+	APPENDING=COLUMNS SAME HONA CHAHIYE Dono table mei
+	MERGING = Primary key concept
+-DATE AND TIME 
+	today='=TODAY()'
+	yesterday='=TODAY()-1'
+	Tommorow='=TODAY()+1'
+	year='=YEAR(select date cell)'
+	month='=MONTH(select date cell)'
+	A2=12:32:23='=HOUR(SELECT CELL A2)
+	Date difference='=DATEDIF(B15,TODAY(),"y")' ismei(y-years)
+	NETWORKING DAYS='NETWORKDAYS(B15,TODAY())' //REMOVE HO JAYEGI HOLDIAYS
+	WORK DAY='=WORKDAY(STARTING DATE,KITNE DIN KAAM KRA)//HOLDIAYS REMOVE HO JAATE
+-Gantt chart=to track(Stacked bar chart)
+	like project start and end date and time yea basically track rakhne k liye hota
+ismei start date rkhi tb datediff btw start date and end date then start date and duration ko chart mi plot krke start date ko white color kr diya
+	sbse Pehle insert mei jao tb chart choose kro tb chart pr right click krke select date then project start then again add section of end date
+-Logical Functions:IF,IFS,SWITCH,AND,OR
+	=if(column>x,"yes","no")
+	=ifs(condition1,"yes",condition2"yes"...) //same switch kaam krta bs baar baar column likhne ki need nhi e.g. =IFS(COLUMN=1,"Excellent',D2=2,"Good',D2=3....)
+	=SWITCH(COLUMN,1,"Excellent',2,"Good',3,"Average",4,"Nice",5,"Poor") //br bar condition ni likhna padha
+	=AND(COLUMN="CONDITION",COLUMN="CONDITION") //IF MATCH BOTH CONDITION THEN GIVES TRUE
+	=OR(COLUMN="CONDITION",COLUMN="CONDITION") //IF ONE MATCH RIGHT TOH GIVES TRUE
+''EXAMPLE:=IF(OR(B2="HR",B2="MARKETING"),"BONUS","N0-BONUS")
+-ARTHMETIC FUNCTIONS:SUM,AVERAGE,PRODUCT
+	=SUM()/=AVERAGE()/=PRODUCT()
+-LOOKUP FUNCTIONS:
+	VLOOKUP,HLOOKUP(LEGACY)  //not good cuz saare table search krta
+	INDEX+MATCH(industry-preferred)  //same as xlookup
+	=INDEX(C1:C6(salary from 1 to end colm),MATCH("jane smith",A1:A6(name from 1 to end))
+	XLOOKUP(modern and powerful)
+	=XLOOKUP("NAME",SELECT FULL COLUMN OF NAME,SELECT FULL COLUMN OF FINDING)
+	LOOKUP(alwys sort data)  //use agar muje pta around kra hai iske ass pass
+	=LOOKUP(52000,SELECT FULL COLUMN OF VALUE,SELECT FULL COLUMN OF FINDING)
+-ERROR HANDLING:IFERROR
+	=IFERROR(XLOOKUP(-),"WHAT U WANT IF ERROR GET")
+-Sorting,Filtering and Grouping
+	Data Sorting //home mei hai ribbon
+	Filter,/*/Advanced Filter(with criteria range)  //in home advanced filter ribbon
+		neeche ksis column mei dalo kya chahiye tb pora data select krke ribbon pr click kro then we see filter data
+	Group/Ungroup rows/columns //best Pehle sort kro tb group ribbon pr jakr click kro u wet group or pairs 
+	/*/SubTotals with Outline(Best) sort kr diya group kr diya ab poore group ka total investment dekhna its best 
+
+
+***Power query based wrangling
+-Importing data
+-cleaning raw data
+	remove nulls
+	trim & clean (format option)
+	replace errors
+	fixing datatypes
+	fill down
+-transforming data
+	spilt,rename,extract
+	transpose(mtlb rows ko column bnana and vice versa),pivot/unpivot
+-adding column
+	custom columns
+	index colmns
+-merge &append queries
+	Append refers adding rows
+	merging refers to the adding the columns
+-query steps,applied steps
+
+
+
+
+***Data Modelling and DAX with Power Pivot
+
+1.Introduce Data Modeling
+-DAX Refers to data analysis expression and it is language to create custom caculations,measures
+-two types of table-fact and dimensional(lookup or dim )
+-data flow is always from 'top to down' mtlb a fact table jismei customer and product ka data hai tb usko ham 2 part mei divide krte called dim table ,ek part customer details and dusri table product ki,its called 'Relationships between tables' and methods are'Star Schema' and 'Snowfake Schema'
+-Power Pivot is the editor in excel in Insert ribbon and we use dax in this
+
+2.Crate Relationships
+-sbse Pehle power pivot chuno tb usmei jakr from other source tb excel chunkr browse krna and we get data
+-sbse Pehle diagram view pr jao tb ek table k element ko drag krke dusre table se connect krdo
+-'*'refers to many to one and '1' refers  one 
+-we use one to many relation 
+-Two types of direction=fact to dimensional or dimension to fact(one to many)
+-double click to see connection and 'active' se connection active hota and '---'shows inactive in diagram
+
+3.KPIs and Hierachies(group mei dalna)
+
+4.Introduction to DAX
+-DAX are inbuilt formula
+
+5.calculated columns vs Measures
+-CC refers to made a colm her row mei value ho
+-single value called measure 
+
+6.aggregation functions
+-yea formula bar mei kaam krta':=' yea likhkr fx likhna hota
+-SUM(),AVERAGE(),MIN(),MAX(),COUNT(),COUNTA(it reads non-blank values),DISTINCTCOUNT(),COUNTROWS
+
+7.logical functions
+-Add a column
+-IF(),IFERROR(),SWITCH(TRUE(),condition),AND(),OR(),NOT(),ISBLANK(),ISNUMBER
+
+8.filter functions
+-we alwys use in measure
+-CALCULATE(),FILTER(),ALL()
+	example='HighSales:=CALCULATE(SUM(),FILTER(Table,()>3000))
+	OR  	'ALLSales:=CALCULATE(SUM(),ALL(SALES)
+
+9.Relationship Functions
+-RELATED() //yea agar hammei kisi table se data nikalna bai toh
+-USERELATIONSHIP() //when we have inactive relationship and we use for measure
+-LOOKUPVALUE() //calculated colm k liye use krte
+	ex==LOOKUPVALUE(Employees[EmployeeName],[EmployeeID],Sales[EmployeeID])  //ismei Pehle kya nikalna tb jese emp(empid) kissay match honi chahiye like sale(emp id) se 
+
+
+
+10.(IMPORTANT)Time Intelligence Functions
+-TOTALYTD(),TOTALMTD(),TOTALQTD() //EX.=MTD:=TOTALMTD(SUM(Sales[UnitPrice]),'Date'[Date])
+-SAMEPERIODLASTYEAR() //e.g.:=CALCULATE(SUM([SalesAmount]),SAMEPERIODLASTYEAR('Date'[Date]
+-DATEADD() //e.g.:=CALCULATE(SUM([SalesAmount]),DATEADD('Date'[Date],-1,MONTH))
+
+-DATESYTD(),DATESMTD() ////e.g.:=CALCULATE(SUM([SalesAmount]),DATESYTD('Date'[Date]
+-PREVIOUSYEAR(),NEXTYEAR()
+
+-VAR //yea use hota si DAX lang complex na bne 
+	*example,:=VAR Startdate=FIRSTDATE('DATE[DATE])
+		VAR Enddate=LASTDATE('Date[Date])
+		RETURN
+		CALCULATE(SUM([SaleAmount]),DATESBETWEEN('Date'[Date].StartDate,EndDate))
+
+-FIRSTDATE(),LASTDATE() //ismei continuous date chahiye otherwise it gives blank
+//YTD VAGERA 1 JAN SE 1 JAN CHLTA ONE YEAR BUT SAMEPERIOD,DATeADD YEA CURRENT DATE SE CURRENT DATE CHLTE LIKE TODAY IS 15march so agla dateadd 15april dega
+
+
+
+11.Math and Stastical
+-DIVIDE(),ROUND(),INT(),MOD()
+-SUMX() //measure hota and it gives sum her row k liye 
+
+12.Text Functions
+-CONCATENATE() //concate 2 value leta but '&' lagane se ham multiple value le skte
+-LEFT(),RIGHT(),MID(),
+-SEARCH() //not case sensitie mtlb yea chahe letter capital ho ya na ho yea fir bhi val de deta
+-FIND()-case sensitive
+-UPPER(),LOWER(),TRIM()
+
+13.Important Functions
+	Calculate()filter()
+Related()
+	sumx() Datesytd() or
+sameperiodlastyear()
+
+14.visual-level filtering
+15.performance best practices
+
+
+
+
+***Analyzing and Visualizing with Pivot tables
+1.Freezing panes
+-View mei jakr freeze kr skte 
+2.Conditional formatting for insights
+-Home mei fx hai
+
+*Ham excel mei nhi krte we alwys choose powerpivot and then pivot table but ham calculated columns sirf excel pivot table sheet mei hee perform kr payenge
+3.Introduction to pivot tables
+	KPIs(key performance indicator) and Hierachies(diagram se bn jaati)
+	Row,column ,values .filters in pivot tables
+	Drill-Downs(+ ka icon neeche jaate jaate),slicers(also called filter) and timelines(option in pivotanalysis)
+	Grouping by Date or Category
+	Value field settings(Sum,Count,Average)
+	Calulated Fields/Items
+	Building Dashboard-like Pivot Reports
+4.Introduction to visuals
+	Column,line,pie,bar,area,combo
+	histogram,box and whisker,treemap,waterfall,funnel
+	dynamic charts(using dropdowns)
+	formatting charts(axes,labels,colors,data points)
+	sparkling charts
+	KPI visuals and target vs achievements(sales/target)
+5.Dashboard Design Principles(layout,colors,flow)
+//graph bnao tb slicer insert kro tb usmei left click krke report connection then timeline then connection
+6.KPI Indicators,Progress bars,traffic lights
+7.Interactivity with Form Controls(Dropdown,Checkboxes)
+-Checkbox=developer mei jakr insert krdo tb usmei right click krke cell link krdo by format option on right click
+
+
+			***************************************				
+	
