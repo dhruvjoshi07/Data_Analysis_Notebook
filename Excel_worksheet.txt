@@ -1,12 +1,11 @@
 ***********Excel worksheet**********
-
-**basic excel
 -select and double click on column =khud adjust kr deta test column mei or wrap test ribbon or hota
 -ctrl+down se ham seedha last value mei pahuch jaate
 -ctrl+a = select kr deta 
 -ctrl+shift+any right/left/down/up=select kr deta poori row or column
--ctrl+'+' =insert krta
--ctrl+'-' =delete krta 
+-ctrl+ =insert krta
+-ctrl- =delete krta 
+
 -double click or F2 click krke= edit kr skte cell mei
 -ctrl + alt+ v=gives paste multiple options like formatting,content etc.
 -'='=yea agar ham kisi cell mei likhe it enabvles arithmetic operations like =1+2 gives 3(independent value)
@@ -180,24 +179,17 @@ ismei start date rkhi tb datediff btw start date and end date then start date an
 Related()
 	sumx() Datesytd() or
 sameperiodlastyear()
-
 14.visual-level filtering
 15.performance best practices
 
 
-
-
 ***Analyzing and Visualizing with Pivot tables
 1.Freezing panes
--View mei jakr freeze kr skte 
 2.Conditional formatting for insights
--Home mei fx hai
-
-*Ham excel mei nhi krte we alwys choose powerpivot and then pivot table but ham calculated columns sirf excel pivot table sheet mei hee perform kr payenge
 3.Introduction to pivot tables
-	KPIs(key performance indicator) and Hierachies(diagram se bn jaati)
+	KPIs and Hierachies
 	Row,column ,values .filters in pivot tables
-	Drill-Downs(+ ka icon neeche jaate jaate),slicers(also called filter) and timelines(option in pivotanalysis)
+	Drill-Downs,slicers and timelines
 	Grouping by Date or Category
 	Value field settings(Sum,Count,Average)
 	Calulated Fields/Items
@@ -208,13 +200,13 @@ sameperiodlastyear()
 	dynamic charts(using dropdowns)
 	formatting charts(axes,labels,colors,data points)
 	sparkling charts
-	KPI visuals and target vs achievements(sales/target)
+	KPI visuals and target vs achievements
+
 5.Dashboard Design Principles(layout,colors,flow)
-//graph bnao tb slicer insert kro tb usmei left click krke report connection then timeline then connection
 6.KPI Indicators,Progress bars,traffic lights
 7.Interactivity with Form Controls(Dropdown,Checkboxes)
--Checkbox=developer mei jakr insert krdo tb usmei right click krke cell link krdo by format option on right click
 
 
 			***************************************				
-	
+
+
