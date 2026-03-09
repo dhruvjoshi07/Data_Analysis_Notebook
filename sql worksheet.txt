@@ -37,4 +37,9 @@ where name='abc'
 
 ***PHASE 3
 -Appropriate Data Type
--Constraints
+1.Numeric Data types
+	SMALLINT,INTEGER/INT,BIGINT,DECIMAL(p,s)/NUMERIC(p,s),REAL,DOUBLE PRECISION,SERIAL
+2.character/string data types
+	CHAR(n),VARCHAR(n),TEXT
+3.boolean type
+	TRUE,FALSE,NOT NULL,is_active BOOLEAN
