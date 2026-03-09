@@ -1,0 +1,40 @@
+****PHASE 1
+-PostgreSQL?it supports NoSQL(jsonb,hstore and add own data types)
+-RDMS
+-Basic sql syntax
+-understanding databse,table,row,column
+-Schema(organise objects using schema,in postgres it has db as schema caleed public
+
+****PHASE 2
+-Basic Commands
+-CRUD(CREATE,READ,UPDATE,DELETE) operations
+CREATE DATABASE new_db; //in sql shell and /c new_db; //connection in database in shell
+
+-Creating table=
+CREATE TABLE Students(
+	name char(50),
+	age INT,
+	grade char(1)
+)
+
+-Inserting in table=
+INSERT INTO Students(name,age,grade)
+Values('Name','age','grade'),
+	('Name','age','grade');
+-table data dekhne k liye=
+	SELECT * FROM students;
+or 	SELECT name from students where age=23;
+
+-Updating tables=
+UPDATE STUDENTS
+SET age=24
+WHERE name='abc';
+SELECT * FROM Students;
+
+-Deleting in table=
+DELETE from students
+where name='abc'
+
+***PHASE 3
+-Appropriate Data Type
+-Constraints
