@@ -90,6 +90,23 @@ LIMIT(limit the no.of rows returned) 	//select * from products limit 3;
 AS(rename columns or tables temporarily  //select name as item_name,price as item_price from products;
 
 DISTINCT(return only unique/distinct values) //select distinct category from products;
+-Clauses with Operators
+--Comparison(=,><)
+
+--range(btw) 	//select * from products where price between 400 and 1000; //bar bar and na use kre
+
+--set(in)	//select * from products where category in('a','b');
+
+--pattern(like)	//select * from products where sku_code like 'w%';	//mid=%123%,last=%123,start=123%,position=likr'_b%'(2nd letter b ho)
+
+--logical(and,or,where not) //select * from products where price<1000 and category ='abc..';
+
+-Aggregation functions
+	count()		//select count(product_id) from products;
+	sum(),avg()	//select sum(price) from products where category='abc'	
+	min(),max()	//select min(price) fromproducts
+
+
 
 
 
