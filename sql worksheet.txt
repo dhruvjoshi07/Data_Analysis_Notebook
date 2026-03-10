@@ -43,3 +43,34 @@ where name='abc'
 	CHAR(n),VARCHAR(n),TEXT
 3.boolean type
 	TRUE,FALSE,NOT NULL,is_active BOOLEAN
+4.date and time types
+	DATE,TIME,TIMESTAMP(date+time),TIMESTAMPTZ(with timezone),INTERVAL(time diff)
+
+--Constraints-
+-PIMARY KEY
+-NOT NULL
+-UNIQUE(No duplicate values allowed)
+-DEFAULT(provide default val if none) //ex.=created_at date default now(),
+-CHECK(validates val)
+-FOREIGN KEY(link one table to another)
+
++QUESTION SOLN:
+CREATE table information (
+	Product_id serial primary key,
+	Name varchar(100) not null,
+	sku_code_digit char(8) unique not null check(char_length(sku_coe_digit)=8),
+	Price_max numeric(10,2) check (Price_max>=0),
+	Stock_Quantity int default 0 check(Stock_Quantity>=0),
+	is_available Boolean default TRUE ,
+	Category text Not null,
+	added_on DATE Default now(),
+	last_update Timestamp default now()
+);
+
+INSERT INTO information(Name,sku_code_digit,Price_max,Stock_Quantity,is_available,category)
+VALUES('Dhruv','fyh337',19191919.10,1,FALSE,'HOME');
+
+SELECT * FROM information;
+
+
+
