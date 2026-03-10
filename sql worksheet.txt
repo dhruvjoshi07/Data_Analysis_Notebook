@@ -71,6 +71,28 @@ INSERT INTO information(Name,sku_code_digit,Price_max,Stock_Quantity,is_availabl
 VALUES('Dhruv','fyh337',19191919.10,1,FALSE,'HOME');
 
 SELECT * FROM information;
+***PHASE 4
+-Clauses
+SELECT,FROM, // example,select name,price from products;
+we use '*' to show all products
+
+WHERE  //example,select * from products where category='general';
+
+GROUP BY(group rows for aggregation) //example,select category from products group by category;
+
+HAVING(used after group by and it filter aggregated groups) 
+	//example,select category,count(*) from products group by category having count(*)>2;
+
+ORDER BY(sort)	//example, select * from product order by price desc(if ulta);
+
+LIMIT(limit the no.of rows returned) 	//select * from products limit 3;
+
+AS(rename columns or tables temporarily  //select name as item_name,price as item_price from products;
+
+DISTINCT(return only unique/distinct values) //select distinct category from products;
+
+
+
 
 
 
