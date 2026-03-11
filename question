@@ -1,0 +1,19 @@
+	-- Create table
+CREATE TABLE dataset(
+	ID SERIAL PRIMARY KEY,
+	name varchar(100) not null,
+	category text not null,
+	price numeric(4,2) default 0 check(price>=0),
+	code char(5) default 0 check(char_length(code)=5),
+	is_available boolean default true,
+	start_date date default now(),
+	end_date timestamp default now() 
+
+)
+	-- Insert data
+INSERT INTO dataset(name,category,price,code,is_availabLe)
+Values('Dhruv','General',89.98,'W7857',TRUE),
+	('Muskan','Genral',87.87,'Q6778',FALSE),
+	('RAM','SC',66.99,'U7676',TRUE),
+	('Abhi','OBC',56.99,'A6767',FALSE),
+	('Meet','SC',92.64,'M4523',TRUE);
