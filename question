@@ -27,6 +27,10 @@ select * from dataset limit 2;
 select * from dataset order by price desc limit 2;
 select name as d_name from dataset;
 select distinct category from dataset;
+
+
+	-- Aggregation functions
+select sum(price) as total_price,count(price) as total_numbers, max(price) as maximum_price,avg(price) as average_price from dataset;
 select * from dataset where price between 80 and 90;
 select * from dataset where category in ('a','b');
 select * from dataset where code like '_4%';
