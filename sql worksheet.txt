@@ -107,6 +107,16 @@ DISTINCT(return only unique/distinct values) //select distinct category from pro
 	min(),max()	//select min(price) fromproducts
 
 
+	-- questions
+select name,price from dataset order by price limit 1 ;
+/*or method 2*/
+select name,price from dataset where price=(select min(price) from dataset);
+select round(avg(price),2) from dataset where category in ('OBC','SC');
+select name,price,is_available from dataset where is_available=true and price>50 and price<80;
+select category,max(price) from dataset group by category;
+select distinct upper(category) as last_que from products order by last_que desc;
+
+
 
 
 
