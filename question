@@ -17,3 +17,17 @@ Values('Dhruv','General',89.98,'W7857',TRUE),
 	('RAM','SC',66.99,'U7676',TRUE),
 	('Abhi','OBC',56.99,'A6767',FALSE),
 	('Meet','SC',92.64,'M4523',TRUE);
+
+
+	-- Clauses
+SELECT name from dataset where price =87.87;
+select category from dataset group by category;
+select category,count(*) from dataset group by category having count(*)>2;
+select * from dataset limit 2;
+select * from dataset order by price desc limit 2;
+select name as d_name from dataset;
+select distinct category from dataset;
+select * from dataset where price between 80 and 90;
+select * from dataset where category in ('a','b');
+select * from dataset where code like '_4%';
+select * from dataset where code like 'w%' or category='General'; 
