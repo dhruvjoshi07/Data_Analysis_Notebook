@@ -117,6 +117,26 @@ select category,max(price) from dataset group by category;
 select distinct upper(category) as last_que from products order by last_que desc;
 
 
+***String functions
+-manipulate text data like names,categories,skus,etc
+it hep to clean text,extract parts of string,convert cases,replace or remove char
+-first set of functions are upper lower and length function
+	SELECT upper(name) from products;
+	SELECT lower(sku_code) from poducts;
+	SELECT length(name) from products;
+-substring-it is used to extract some portion from string
+	substring(text,location,length)
+example,SELECT name,SUBSTR(sku_code,1,2) from products;
+-left() and right()	//SELECT left(sku_code,2) from products;
+-Concat joins 2 strings together
+	SELECT concat(name,' ',category) from products;
+	SELECT concat_ws(':',name,category) from products;	//ws means with separator
+-trim()-this fx will remove all the spaces from string
+-replace()-this fx will replace anything u want 
+	SELECT replace(sku_code,left(sku_code,2),'GG')from products;
+
+
+
 
 
 
