@@ -142,6 +142,16 @@ example,SELECT name,SUBSTR(sku_code,1,2) from products;
 		Add column email varchar(100) default 'not provided';
 
 
+2.Remove a column
+		ALTER TABLE students
+		Drop column email;
+	3.Rename a column
+		ALTER TABLE students
+		Rename column name to full_name;
+	\d gives description in terminal and pqsql -u postgres likhne se change db
+
+
+
 
 
 
