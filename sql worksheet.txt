@@ -135,9 +135,11 @@ example,SELECT name,SUBSTR(sku_code,1,2) from products;
 -replace()-this fx will replace anything u want 
 	SELECT replace(sku_code,left(sku_code,2),'GG')from products;
 
-
-
-
+**PHASE 5
+-ALTER(add new colm,remove constraints,change data type,rename a table)
+	1.Add a new column :
+		ALTER TABLE students
+		Add column email varchar(100) default 'not provided';
 
 
 
