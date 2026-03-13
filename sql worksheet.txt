@@ -166,6 +166,10 @@ example,SELECT name,SUBSTR(sku_code,1,2) from products;
 		alter table students
 		rename to school_students
 
+-CASE
+It is a conditional expression in sql that works like an if-else or switch statement .it lets u return diff val based on diff conditions all within a single query.
+
+
 
 
 
