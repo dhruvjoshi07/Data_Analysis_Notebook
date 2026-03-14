@@ -168,6 +168,12 @@ example,SELECT name,SUBSTR(sku_code,1,2) from products;
 
 -CASE
 It is a conditional expression in sql that works like an if-else or switch statement .it lets u return diff val based on diff conditions all within a single query.
+-use:to create custom column on the fly
+	categorize data based on certain logic
+	replace values conditionaly
+	replace values conditionally
+	to handle nulls or missing values gracefully
+	to simplify complex logic inside SELECT queries
 
 
 
