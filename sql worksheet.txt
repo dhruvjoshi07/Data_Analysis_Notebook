@@ -199,6 +199,29 @@ example(best),alter table product
 		end;
 		select * from products;
 
+*****PHASE 6
+-relationships
+	in a relational db,data is stored across multiple tables,and these tables are connected through relationships
+	1.ONE-TO-ONE(1:1)
+	2.ONE-TO-MANY(1:N)  //MOST COMMON
+	3.MANY-TO-MANY(M:N) //we use junction table where we create third table and breaks many to many into two one to many
+
+1.one-to-one
+create 2 table(students,student_profiles) dono mei student_id same hai toh dono table ko connect krne k liye dusri table mei replace primary to foreign key and alter like
+	alter table student_profiles
+	add constraint fk_student_id
+	forign key (student_id)
+	references students(student-id)
+-joins use krte hai 
+select
+	s.student_id,  // s refers student ka data
+	s.name,
+	sp.address,	//sp refers student_profile ka data
+	sp.age,
+	sp.phone
+from students s
+join student_profiles sp
+on s.student_id=sp.student_id;
 
 
 
