@@ -223,6 +223,26 @@ from students s
 join student_profiles sp
 on s.student_id=sp.student_id;
 
+2.one-to-many
+step 1:create tables
+	-students table-student info
+	-marks table-subject wise marks(linked to student)
+step 2:insert sample data
+step 3:add foreign key constraint
+step 4:teach joins
+
+-+-+-+-JOINS
+Joins are used to combine rows from two or more tables based on a related column,usually primary key in one table and a foreign key in another
+-use:	merge related data
+	meaningful real-world queries like highest,absence
+-Types of joins
+*inner join(only matching rows in both tables)
+	syntax:	select columns	//example=select * from students join marks m on s.student.id=m.student_id;
+		from table1
+		join table2
+		on table.common_column=table2.common_column
+
+
 
 
 
