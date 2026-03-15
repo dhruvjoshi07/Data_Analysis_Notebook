@@ -242,6 +242,20 @@ Joins are used to combine rows from two or more tables based on a related column
 		join table2
 		on table.common_column=table2.common_column
 
+*left join(all rows from the left table)
+//example,hamare pass ek esa bnda hai jiski insert values sb ni hai like no matching
+	insert into students(name)
+	values('abc');
+//then with inner join hammei ni milega so to show we see same as inner bs left likho
+	select * from students left join marks m on s.student.id=m.student_id;
+	
+*right join(all rows from the right table)
+	select * from students right join marks m on s.student.id=m.student_id;
+*full join (all rows from both tables)	//like inner join
+	select * from students full join marks m on s.student.id=m.student_id;
+*cross join(cartesian product)
+	//like permutations
+NOTE= ON DELETE CASCADE =use for delete in both table agar ek mei ho
 
 
 
