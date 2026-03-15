@@ -257,8 +257,7 @@ Joins are used to combine rows from two or more tables based on a related column
 	//like permutations
 NOTE= ON DELETE CASCADE =use for delete in both table agar ek mei ho
 
-
-
+3.many-to-many relationship
 
 
 
