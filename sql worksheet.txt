@@ -175,6 +175,29 @@ It is a conditional expression in sql that works like an if-else or switch state
 	to handle nulls or missing values gracefully
 	to simplify complex logic inside SELECT queries
 
+-syntax:
+	SELECT
+	column1,
+	case
+	when condition1 then result
+	when condition2 then result2
+	else
+	else default_result
+	end as new_column_name
+	from table_name;
+example,select * from products;    //virtual data
+	slect name,price,
+	case when [price>1000] then 'expensive'
+             when [price between 500 and 1000] then 'moderate'
+		else 'cheap'
+		end as price_tag from products;
+example(best),alter table product
+		set price tag=
+			case when [price>1000] then 'expensive'
+             when [price between 500 and 1000] then 'moderate'
+		else 'cheap'
+		end;
+		select * from products;
 
 
 
