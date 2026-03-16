@@ -284,6 +284,44 @@ step5:insert into student_course
 (3,102);
 step6:2 join banne padenge
 	select s.student_name,c.course_name from student_course sc join students s on sc.student_id=s.student_id join course c on sc.course_id=c.course_id;
+****Phase 7
+---views---
+a view is a virtual tabl based on sql query.it doesnot store actual data,but shows results when accesses-just like saved query
+-why use?reuse logic(bar bar join filter na likhna),simplify complex queries(save long query and access it like table),abstraction,security
+-syntax://view option mei jakr likho schema mei
+	create view view_name as
+-for delete just use'drop' or 'replace' for something
+
+---procedure---
+block of sql code that performs a series of operations-like inserting,updating,deleting or selecting data-and is stored in the database
+-benefits:
+	reuseability,security,faster execution,encapsulation(hide complex logic in one block),multi step operations
+-syntax:
+create procedure procedure_name(parameter1 datatype,parameter2 datatype)
+language plpgsql
+as $$
+begin
+	--logic
+end;
+$$;
+call procedure_name(val1,val2);
+example=
+create procedure add_product(
+	p_name varchar,
+	p_sku char(10)
+)
+language plpgsql
+as $$
+begin
+	insert into products(name,sku_code)
+	values(p_name,p_sku);
+	raise notice 'product added successfully';
+end;
+$$;
+call add product('bottle','b32313');
+
+
+			*******************************
 
 
 
