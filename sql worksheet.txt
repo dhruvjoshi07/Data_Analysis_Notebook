@@ -258,6 +258,34 @@ Joins are used to combine rows from two or more tables based on a related column
 NOTE= ON DELETE CASCADE =use for delete in both table agar ek mei ho
 
 3.many-to-many relationship
+step1:create a table
+	create table student(
+		student_id int primary key,
+		student_name varchar(100)
+step2:create 2nd table
+	create table courses(
+	course_id int primary key,
+	course_name varchar(100)
+);
+step3:insert into both tables
+step4:make junction table
+	create table student_courses(
+	student_id int,				//composite primary key cuz 2 primarykey
+	course_id int,
+	primary key(student_id,course_id),
+	foreign key(student_id)references students(student_id),
+	foreign key(course_id) references course(course_id)
+);
+step5:insert into student_course
+(1,101),
+(1,102),
+(2,101),
+(2,103),
+(3,102);
+step6:2 join banne padenge
+	select s.student_name,c.course_name from student_course sc join students s on sc.student_id=s.student_id join course c on sc.course_id=c.course_id;
+
+
 
 
 
