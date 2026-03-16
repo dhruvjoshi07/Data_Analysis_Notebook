@@ -322,7 +322,135 @@ call add product('bottle','b32313');
 
 
 			*******************************
+			*******************************
+❗Important SQL Topics Missing for Data Analytics
 
+
+1️⃣ Window Functions (VERY IMPORTANT)
+
+Used in analytics dashboards and interviews.
+
+Examples:
+
+ROW_NUMBER()
+
+RANK()
+
+DENSE_RANK()
+
+LEAD()
+
+LAG()
+
+PARTITION BY
+
+Example:
+
+SELECT name, department,
+RANK() OVER(PARTITION BY department ORDER BY salary DESC)
+FROM employees;
+
+Used for:
+
+Ranking
+
+Top products
+
+Sales leaderboard
+
+2️⃣ Subqueries
+
+Query inside another query.
+
+Example:
+
+SELECT name
+FROM employees
+WHERE salary > (
+    SELECT AVG(salary)
+    FROM employees
+);
+
+Used for:
+
+Above-average analysis
+
+Filtering grouped results
+
+3️⃣ CTE (Common Table Expressions)
+
+Very important for clean SQL code.
+
+Example:
+
+WITH sales_total AS (
+    SELECT customer_id, SUM(amount) total
+    FROM sales
+    GROUP BY customer_id
+)
+SELECT *
+FROM sales_total
+WHERE total > 10000;
+4️⃣ Date & Time Analysis
+
+Very common in business analytics.
+
+Functions:
+
+DATE_TRUNC
+
+EXTRACT
+
+AGE
+
+CURRENT_DATE
+
+Example:
+
+SELECT DATE_TRUNC('month', order_date), SUM(price)
+FROM orders
+GROUP BY 1;
+
+Used for:
+
+Monthly revenue
+
+Growth analysis
+
+5️⃣ Data Cleaning in SQL
+
+Real datasets are messy.
+
+Important functions:
+
+COALESCE
+
+NULLIF
+
+TRIM
+
+CAST
+
+Example:
+
+SELECT COALESCE(phone,'Not provided')
+FROM customers;
+6️⃣ Advanced Joins
+
+You know basic joins but also learn:
+
+Self Join
+
+Anti Join
+
+Semi Join
+
+Example:
+
+SELECT a.name
+FROM employees a
+JOIN employees b
+ON a.manager_id = b.employee_id;
 
 
 
