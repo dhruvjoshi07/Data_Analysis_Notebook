@@ -381,61 +381,35 @@ SELECT *
 FROM sales_total
 WHERE total > 10000;
 4️⃣ Date & Time Analysis
-
 Very common in business analytics.
-
 Functions:
-
 DATE_TRUNC
-
 EXTRACT
-
 AGE
-
 CURRENT_DATE
-
 Example:
-
 SELECT DATE_TRUNC('month', order_date), SUM(price)
 FROM orders
 GROUP BY 1;
-
 Used for:
-
 Monthly revenue
-
 Growth analysis
-
 5️⃣ Data Cleaning in SQL
-
 Real datasets are messy.
-
 Important functions:
-
 COALESCE
-
 NULLIF
-
 TRIM
-
 CAST
-
 Example:
-
 SELECT COALESCE(phone,'Not provided')
 FROM customers;
 6️⃣ Advanced Joins
-
 You know basic joins but also learn:
-
 Self Join
-
 Anti Join
-
 Semi Join
-
 Example:
-
 SELECT a.name
 FROM employees a
 JOIN employees b
