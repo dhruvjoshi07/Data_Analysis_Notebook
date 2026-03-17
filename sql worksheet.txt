@@ -324,26 +324,15 @@ call add product('bottle','b32313');
 			*******************************
 			*******************************
 ❗Important SQL Topics Missing for Data Analytics
-
-
 1️⃣ Window Functions (VERY IMPORTANT)
-
 Used in analytics dashboards and interviews.
-
 Examples:
-
 ROW_NUMBER()
-
 RANK()
-
 DENSE_RANK()
-
 LEAD()
-
 LAG()
-
 PARTITION BY
-
 Example:
 
 SELECT name, department,
