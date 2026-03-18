@@ -404,6 +404,8 @@ CAST
 Example:
 SELECT COALESCE(phone,'Not provided')
 FROM customers;
+
+//this is important
 6️⃣ Advanced Joins
 You know basic joins but also learn:
 Self Join
