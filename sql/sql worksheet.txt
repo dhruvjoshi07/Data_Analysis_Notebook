@@ -1,0 +1,425 @@
+****PHASE 1
+-PostgreSQL?it supports NoSQL(jsonb,hstore and add own data types)
+-RDMS
+-Basic sql syntax
+-understanding databse,table,row,column
+-Schema(organise objects using schema,in postgres it has db as schema caleed public
+
+****PHASE 2
+-Basic Commands
+-CRUD(CREATE,READ,UPDATE,DELETE) operations
+CREATE DATABASE new_db; //in sql shell and /c new_db; //connection in database in shell
+
+-Creating table=
+CREATE TABLE Students(
+	name char(50),
+	age INT,
+	grade char(1)
+)
+
+-Inserting in table=
+INSERT INTO Students(name,age,grade)
+Values('Name','age','grade'),
+	('Name','age','grade');
+-table data dekhne k liye=
+	SELECT * FROM students;
+or 	SELECT name from students where age=23;
+
+-Updating tables=
+UPDATE STUDENTS
+SET age=24
+WHERE name='abc';
+SELECT * FROM Students;
+
+-Deleting in table=
+DELETE from students
+where name='abc'
+
+***PHASE 3
+-Appropriate Data Type
+1.Numeric Data types
+	SMALLINT,INTEGER/INT,BIGINT,DECIMAL(p,s)/NUMERIC(p,s),REAL,DOUBLE PRECISION,SERIAL
+2.character/string data types
+	CHAR(n),VARCHAR(n),TEXT
+3.boolean type
+	TRUE,FALSE,NOT NULL,is_active BOOLEAN
+4.date and time types
+	DATE,TIME,TIMESTAMP(date+time),TIMESTAMPTZ(with timezone),INTERVAL(time diff)
+
+--Constraints-
+-PIMARY KEY
+-NOT NULL
+-UNIQUE(No duplicate values allowed)
+-DEFAULT(provide default val if none) //ex.=created_at date default now(),
+-CHECK(validates val)
+-FOREIGN KEY(link one table to another)
+
++QUESTION SOLN:
+CREATE table information (
+	Product_id serial primary key,
+	Name varchar(100) not null,
+	sku_code_digit char(8) unique not null check(char_length(sku_coe_digit)=8),
+	Price_max numeric(10,2) check (Price_max>=0),
+	Stock_Quantity int default 0 check(Stock_Quantity>=0),
+	is_available Boolean default TRUE ,
+	Category text Not null,
+	added_on DATE Default now(),
+	last_update Timestamp default now()
+);
+
+INSERT INTO information(Name,sku_code_digit,Price_max,Stock_Quantity,is_available,category)
+VALUES('Dhruv','fyh337',19191919.10,1,FALSE,'HOME');
+
+SELECT * FROM information;
+***PHASE 4
+-Clauses
+SELECT,FROM, // example,select name,price from products;
+we use '*' to show all products
+
+WHERE  //example,select * from products where category='general';
+
+GROUP BY(group rows for aggregation) //example,select category from products group by category;
+
+HAVING(used after group by and it filter aggregated groups) 
+	//example,select category,count(*) from products group by category having count(*)>2;
+
+ORDER BY(sort)	//example, select * from product order by price desc(if ulta);
+
+LIMIT(limit the no.of rows returned) 	//select * from products limit 3;
+
+AS(rename columns or tables temporarily  //select name as item_name,price as item_price from products;
+
+DISTINCT(return only unique/distinct values) //select distinct category from products;
+-Clauses with Operators
+--Comparison(=,><)
+
+--range(btw) 	//select * from products where price between 400 and 1000; //bar bar and na use kre
+
+--set(in)	//select * from products where category in('a','b');
+
+--pattern(like)	//select * from products where sku_code like 'w%';	//mid=%123%,last=%123,start=123%,position=likr'_b%'(2nd letter b ho)
+
+--logical(and,or,where not) //select * from products where price<1000 and category ='abc..';
+
+-Aggregation functions
+	count()		//select count(product_id) from products;
+	sum(),avg()	//select sum(price) from products where category='abc'	
+	min(),max()	//select min(price) fromproducts
+
+
+	-- questions
+select name,price from dataset order by price limit 1 ;
+/*or method 2*/
+select name,price from dataset where price=(select min(price) from dataset);
+select round(avg(price),2) from dataset where category in ('OBC','SC');
+select name,price,is_available from dataset where is_available=true and price>50 and price<80;
+select category,max(price) from dataset group by category;
+select distinct upper(category) as last_que from products order by last_que desc;
+
+
+***String functions
+-manipulate text data like names,categories,skus,etc
+it hep to clean text,extract parts of string,convert cases,replace or remove char
+-first set of functions are upper lower and length function
+	SELECT upper(name) from products;
+	SELECT lower(sku_code) from poducts;
+	SELECT length(name) from products;
+-substring-it is used to extract some portion from string
+	substring(text,location,length)
+example,SELECT name,SUBSTR(sku_code,1,2) from products;
+-left() and right()	//SELECT left(sku_code,2) from products;
+-Concat joins 2 strings together
+	SELECT concat(name,' ',category) from products;
+	SELECT concat_ws(':',name,category) from products;	//ws means with separator
+-trim()-this fx will remove all the spaces from string
+-replace()-this fx will replace anything u want 
+	SELECT replace(sku_code,left(sku_code,2),'GG')from products;
+
+**PHASE 5
+-ALTER(add new colm,remove constraints,change data type,rename a table)
+	1.Add a new column :
+		ALTER TABLE students
+		Add column email varchar(100) default 'not provided';
+	2.Remove a column
+		ALTER TABLE students
+		Drop column email;
+	3.Rename a column
+		ALTER TABLE students
+		Rename column name to full_name;
+	\d gives description in terminal and pqsql -u postgres likhne se change db
+	4.Change data type of a column
+		ALTER TABLE students
+		Alter column age type smallint;
+	5.set a default value
+		Alter table students
+		alter column age set default 18;
+	6.remove a default value
+		alter table students
+		alter column age drop default;
+	7.add a constraint
+		alter table students
+		add constraint age_check CHECK (age>=0);
+	8.drop a constraint
+		alter table students
+		drop constraint age_check;
+	9.rename a table
+		alter table students
+		rename to school_students
+
+-CASE
+It is a conditional expression in sql that works like an if-else or switch statement .it lets u return diff val based on diff conditions all within a single query.
+-use:to create custom column on the fly
+	categorize data based on certain logic
+	replace values conditionaly
+	replace values conditionally
+	to handle nulls or missing values gracefully
+	to simplify complex logic inside SELECT queries
+
+-syntax:
+	SELECT
+	column1,
+	case
+	when condition1 then result
+	when condition2 then result2
+	else
+	else default_result
+	end as new_column_name
+	from table_name;
+example,select * from products;    //virtual data
+	slect name,price,
+	case when [price>1000] then 'expensive'
+             when [price between 500 and 1000] then 'moderate'
+		else 'cheap'
+		end as price_tag from products;
+example(best),alter table product
+		set price tag=
+			case when [price>1000] then 'expensive'
+             when [price between 500 and 1000] then 'moderate'
+		else 'cheap'
+		end;
+		select * from products;
+
+*****PHASE 6
+-relationships
+	in a relational db,data is stored across multiple tables,and these tables are connected through relationships
+	1.ONE-TO-ONE(1:1)
+	2.ONE-TO-MANY(1:N)  //MOST COMMON
+	3.MANY-TO-MANY(M:N) //we use junction table where we create third table and breaks many to many into two one to many
+
+1.one-to-one
+create 2 table(students,student_profiles) dono mei student_id same hai toh dono table ko connect krne k liye dusri table mei replace primary to foreign key and alter like
+	alter table student_profiles
+	add constraint fk_student_id
+	forign key (student_id)
+	references students(student-id)
+-joins use krte hai 
+select
+	s.student_id,  // s refers student ka data
+	s.name,
+	sp.address,	//sp refers student_profile ka data
+	sp.age,
+	sp.phone
+from students s
+join student_profiles sp
+on s.student_id=sp.student_id;
+
+2.one-to-many
+step 1:create tables
+	-students table-student info
+	-marks table-subject wise marks(linked to student)
+step 2:insert sample data
+step 3:add foreign key constraint
+step 4:teach joins
+
+-+-+-+-JOINS
+Joins are used to combine rows from two or more tables based on a related column,usually primary key in one table and a foreign key in another
+-use:	merge related data
+	meaningful real-world queries like highest,absence
+-Types of joins
+*inner join(only matching rows in both tables)
+	syntax:	select columns	//example=select * from students join marks m on s.student.id=m.student_id;
+		from table1
+		join table2
+		on table.common_column=table2.common_column
+
+*left join(all rows from the left table)
+//example,hamare pass ek esa bnda hai jiski insert values sb ni hai like no matching
+	insert into students(name)
+	values('abc');
+//then with inner join hammei ni milega so to show we see same as inner bs left likho
+	select * from students left join marks m on s.student.id=m.student_id;
+	
+*right join(all rows from the right table)
+	select * from students right join marks m on s.student.id=m.student_id;
+*full join (all rows from both tables)	//like inner join
+	select * from students full join marks m on s.student.id=m.student_id;
+*cross join(cartesian product)
+	//like permutations
+NOTE= ON DELETE CASCADE =use for delete in both table agar ek mei ho
+
+3.many-to-many relationship
+step1:create a table
+	create table student(
+		student_id int primary key,
+		student_name varchar(100)
+step2:create 2nd table
+	create table courses(
+	course_id int primary key,
+	course_name varchar(100)
+);
+step3:insert into both tables
+step4:make junction table
+	create table student_courses(
+	student_id int,				//composite primary key cuz 2 primarykey
+	course_id int,
+	primary key(student_id,course_id),
+	foreign key(student_id)references students(student_id),
+	foreign key(course_id) references course(course_id)
+);
+step5:insert into student_course
+(1,101),
+(1,102),
+(2,101),
+(2,103),
+(3,102);
+step6:2 join banne padenge
+	select s.student_name,c.course_name from student_course sc join students s on sc.student_id=s.student_id join course c on sc.course_id=c.course_id;
+****Phase 7
+---views---
+a view is a virtual tabl based on sql query.it doesnot store actual data,but shows results when accesses-just like saved query
+-why use?reuse logic(bar bar join filter na likhna),simplify complex queries(save long query and access it like table),abstraction,security
+-syntax://view option mei jakr likho schema mei
+	create view view_name as
+-for delete just use'drop' or 'replace' for something
+
+---procedure---
+block of sql code that performs a series of operations-like inserting,updating,deleting or selecting data-and is stored in the database
+-benefits:
+	reuseability,security,faster execution,encapsulation(hide complex logic in one block),multi step operations
+-syntax:
+create procedure procedure_name(parameter1 datatype,parameter2 datatype)
+language plpgsql
+as $$
+begin
+	--logic
+end;
+$$;
+call procedure_name(val1,val2);
+example=
+create procedure add_product(
+	p_name varchar,
+	p_sku char(10)
+)
+language plpgsql
+as $$
+begin
+	insert into products(name,sku_code)
+	values(p_name,p_sku);
+	raise notice 'product added successfully';
+end;
+$$;
+call add product('bottle','b32313');
+
+
+			*******************************
+			*******************************
+❗Important SQL Topics Missing for Data Analytics
+
+//this is more good and interactive
+1️⃣ Window Functions (VERY IMPORTANT)
+Used in analytics dashboards and interviews.
+Examples:
+ROW_NUMBER()
+RANK()
+DENSE_RANK()
+LEAD()
+LAG()
+PARTITION BY
+Example:
+
+SELECT name, department,
+RANK() OVER(PARTITION BY department ORDER BY salary DESC)
+FROM employees;
+
+Used for:
+
+Ranking
+
+Top products
+
+Sales leaderboard
+
+2️⃣ Subqueries
+
+Query inside another query.
+
+Example:
+
+SELECT name
+FROM employees
+WHERE salary > (
+    SELECT AVG(salary)
+    FROM employees
+);
+
+Used for:
+
+Above-average analysis
+
+Filtering grouped results
+
+3️⃣ CTE (Common Table Expressions)
+
+Very important for clean SQL code.
+
+Example:
+
+WITH sales_total AS (
+    SELECT customer_id, SUM(amount) total
+    FROM sales
+    GROUP BY customer_id
+)
+SELECT *
+FROM sales_total
+WHERE total > 10000;
+4️⃣ Date & Time Analysis
+Very common in business analytics.
+Functions:
+DATE_TRUNC
+EXTRACT
+AGE
+CURRENT_DATE
+Example:
+SELECT DATE_TRUNC('month', order_date), SUM(price)
+FROM orders
+GROUP BY 1;
+Used for:
+Monthly revenue
+Growth analysis
+5️⃣ Data Cleaning in SQL
+Real datasets are messy.
+Important functions:
+COALESCE
+NULLIF
+TRIM
+CAST
+Example:
+SELECT COALESCE(phone,'Not provided')
+FROM customers;
+
+//this is important
+6️⃣ Advanced Joins
+You know basic joins but also learn:
+Self Join
+Anti Join
+Semi Join
+Example:
+SELECT a.name
+FROM employees a
+JOIN employees b
+ON a.manager_id = b.employee_id;
+
+
+
+
+
