@@ -58,3 +58,12 @@ print(bool(a))
 		for i in a:
 			print(i)
 *while loop
+a=1
+while a<=30(this is condition):
+	print(a)
+	a=a+1
+#seaparate each digit of a number and print it on the new line.
+#accept a number and print it reverse
+#accept a number and check if it is a palindrome number
+#create a random number guessing game with python
+
