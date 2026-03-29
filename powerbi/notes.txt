@@ -1,0 +1,43 @@
+<-------------------------------POWER BI---------------------------------->
+Section1:Introduction
+1.Discover Data Analysis
+	learn about the roles in data
+	learn about the tasks of a data analyst
+2.Get Started Building with Poer BI
+	How Power bi services and applications work together
+		power bi desktop
+			report building|modelling
+		power bi service
+			online|report publish | scheduling | dashboard
+		powerbi  mobile
+			to view reports or dashboard
+		powerbi gateway
+			bridge and autorefresh
+	explore how power bi can make your business more efficient
+	how to create complelling visulas and reports
+
+Section2:Data preparartion
+1.Get data
+	Identify and connect to data source
+	select a storage mode
+		import=data copy paste
+		direct query=live and offline
+		duel=combination 
+		directlake (only for enterprises)
+	fix performance isssues
+	resolve data import errors
+2.Clean,Tansform and load data
+	resolve inconsistencies,unexpected and null values
+	apply data shape transformation
+	appy user-friendly naming conventions
+	
+Section3:Model
+1.Design a semantic model
+	star schema design
+	create and manage relationships
+2.add measures to semantic models
+	DAX concept and syntax
+3.Use of DAX Functions
+	understand and manipulate filter content
+	use dax functions to extend semantic models
+	create custom data table for time intelligence
