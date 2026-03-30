@@ -122,3 +122,35 @@ Tuple Unpacking
 =que? 	a={1}
 		this is integer like a=1 its not tuple so that to ake it tuple
 		a={1,}		//it makes tuple
+
+-Set
+	syntax: s={}	//this is dictionary not set
+			s={1,2,3,4}
+	-mutable,no duplicates,unordered(no indexes access val),semi-heterogenous(string,number,tuple but not everything)
++=Note: Hash function?
+		value kahi bhi add ho skti set mei
++=Methods:	//it imp cuz it provide mutable 
+	s=(1,2,3,4)
+	s.add(4)		//adds an element
+	s.remove(2)		//remove 2 but raise error
+	s.discard(5)	//remove without error
+	popped_element=s.pop{}		//remove random element
+	s.clear{}		//remove all elements
+
+	a={1,2,3}
+	b={3,4,5}
+	union_set=a.union(b)	//{1,2,3,4,5}
+	intersection_set=a.intersection(b)	//{3}
+	difference_Set=a.difference(b)	//{1,2}
+	symmetric_diff=a.symmetric_difference(b)	//{1,2,4,5}
+
+-Dictionary /hash map(in other lang)
+	-d={//key and values ka pair }
+	d={
+		1:"hello",		//1 is key,"hello" is pair
+		2:56
+		}
+	-mutable,duplicates,order,heterogenous
+	-key not change and it ust unique
+	-it follows insertion order // key k upar val based hoti
+	
