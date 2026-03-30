@@ -5,6 +5,7 @@
 -understanding databse,table,row,column
 -Schema organise objects using schema,in postgres it has db as schema caleed public
 
+
 ****PHASE 2
 -Basic Commands
 -CRUD(CREATE,READ,UPDATE,DELETE) operations
