@@ -67,3 +67,35 @@ while a<=30(this is condition):
 #accept a number and check if it is a palindrome number
 #create a random number guessing game with python
 
+*FUNCTIONS
+Parameters=the thing u accept
+Arguments=the thing u provide to parameters
+-types=	def hello(name,age):
+		print(f"your name is {name} and your age is {age}")
+	hello(age=22,name='abc')	//key argument
+
+	def hello(name,age=17):
+		print(f"your name is {name} and your age is {age}")
+	hello('abc')			//default argument and neche val dalne se update
+
+	def hello(name,age):
+		print(f"your name is {name} and your age is {age}")
+	hello('abc',18)			//positional argument
+
+*DataStructure
+-List
+	syntax: a=[1,2,3...]
+	-mutable,duplicates,ordered,heterogenous(multiple datatypes) 
+	-indexing and slicing
+Traversing list
+-for i in range(len(a)):
+	print(a[i])
+//shortcut to access elements without indexing
+for i in a:
+	print(i)
++=METHODS(print(dir(list)) //ismei sare list k matods dikh jayenge
++=help(list)	//yea btayega methods mei kya use hota
+='append' use case ,last mei add krne k liye,	l=[1,2,3,4]
+						l.append(6)
+						print(l)
+
