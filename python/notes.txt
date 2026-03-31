@@ -150,7 +150,31 @@ Tuple Unpacking
 		1:"hello",		//1 is key,"hello" is pair
 		2:56
 		}
+	print(d[1])		//it acts like index in list
+	d[1] = 1000 	//updation in values 
+	d[3]=10		`	//creation khud python samjh jyega 3 number ki key hai ni
+	del d[3]		//deletion
+	print(d)
 	-mutable,duplicates,order,heterogenous
 	-key not change and it ust unique
 	-it follows insertion order // key k upar val based hoti
-	
++=Traversing
+	d={1:"hello",2,:40,3:"a"}
+	for i in d:		//it do iteration in keys
+		print(d[i])	//without d gives key and with d gives value
+or
+	for in d.values():		without writing values it default key
+		print(I)
++=Methods
+	help(dict)
+que?Deep copy
+	a=[1,2,3,4,5]
+	b=a.copy		//swallow copy
+	b=a
+	b[0]=100
+	print(a)		//it gives [100,2,3,4,5] cuz b mei changes a mei ho gya
+
+#write a py script to merege 2 py dictionaries
+#write a py program to sum all the values in a dictionary
+#count the frequency of each elements
+#write a python program to combine 2 dictionary by adding values for common keys
