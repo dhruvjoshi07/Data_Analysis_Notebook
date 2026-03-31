@@ -178,3 +178,33 @@ que?Deep copy
 #write a py program to sum all the values in a dictionary
 #count the frequency of each elements
 #write a python program to combine 2 dictionary by adding values for common keys
+
+*EXCEPTTION HANDLING
+-errors
+	2 types-syntax error,indentation errpr
+	due to mistakes in the code that prevent it from running.
+Exceptions keyword:
+	-try,except,else,finally,raise	//try alwys run except
+	example,	try:
+					print(10/a)
+				except Exception as err:
+					print(f"Sorry u cant divide by 0 it gives {err}")
+				else:
+					print("This done as a replacemnt of except")
+				print("ok i have the division")
+
+	-finally:
+		print("Ok it will run no matter what")
+
+	-raise example	//manually throw exception
+try:
+	if age<10 or age >18:
+		raise ValueError("error")		//it will stop excution then we use try
+	else:
+		print("abccc")
+except Execption as err:
+	print({err})
+
+print("abc")		//ab yea line print hogi
+
+*FILE HANDLING
