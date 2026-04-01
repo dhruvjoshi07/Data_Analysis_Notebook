@@ -30,7 +30,7 @@ if age==18:
 elif age>18:
     print(f"hello {name} you are a valid voter")
 else:
-    print(f"hello {name} you need to wait")9
+    print(f"hello {name} you need to wait")
 
 # question 5
 year=int(input("Enter year"))
