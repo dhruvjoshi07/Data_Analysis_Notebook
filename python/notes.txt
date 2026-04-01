@@ -208,3 +208,16 @@ except Execption as err:
 print("abc")		//ab yea line print hogi
 
 *FILE HANDLING
+-Creating,Reading,updating,deleting
+-open function=open()	//give path
+	p=open(r'main.py')
+	print(p.read())
+
+-multiple modes to open the file
+	'r'-read but file must exist
+	'w'-write it create file or overwrites
+	'a'-append it adds to end of file
+	'x'-create a new file,fails if it exist
+example,r=open("superman.txt",'w')
+		r.write("abc")
+		r.close()
