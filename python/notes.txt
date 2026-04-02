@@ -221,3 +221,4 @@ print("abc")		//ab yea line print hogi
 example,r=open("superman.txt",'w')
 		r.write("abc")
 		r.close()
+Dhruv joshi
