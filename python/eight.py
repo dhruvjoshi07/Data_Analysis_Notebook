@@ -36,3 +36,4 @@ print(d1)
 r=open("sample.txt",'w')
 r.write("This is file of file handling")
 r.close()
+
