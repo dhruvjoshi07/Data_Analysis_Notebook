@@ -273,8 +273,57 @@ example,r=open("superman.txt",'w')
 		rebok.show()
 
 -TYPES OF ATTRIBUTE
-0
-=======
+.Class Attribute-A normal var created inside a class is a class attribute
+
+.Instance Attribute-Self.name,self.age,etc
+
+-TYPES OF METHODS
+.Instance Method,access and modify 
+	Jab aapko kisi specific student ka data (name, marks) handle karna ho.
+.Class Method,use decorater(@)
+	@classmethod
+	def hello(cls):		//cls target class location
+		print("abc")
+
+		note:Jab aapko poori class ki property (college name) modify karni ho.
+.Static Mthod,no class na class,simple regular fx 
+	@staticmethod
+	def static():
+		print("How are u")
+
+	obj=Animal(12)
+	obj.show() or obj.hello
+
+	note:Jab aapko ek aisa helper function chahiye jo class ke andar toh hai, par usse
+	 data se koi lena dena nahi (like simple math).
+
+
+
+								
+							4-Pillars
+-Inheritance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //this is not useful from here
 Dhruv joshi
 muskan bhardwaj dixit
