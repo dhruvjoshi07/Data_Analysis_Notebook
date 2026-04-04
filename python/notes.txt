@@ -1,4 +1,4 @@
-------------------------------------EASY-------------------------------------
+`											EASY
 -multi line comments are not done in python but we can use by docs string
 *3rules we cant use as a variable
 	=1avx // starting no numbers
@@ -82,7 +82,7 @@ Arguments=the thing u provide to parameters
 		print(f"your name is {name} and your age is {age}")
 	hello('abc',18)			//positional argument
 
-<------------------Medium-------------->
+														MEDIUM
 *DataStructure
 -List
 	syntax: a=[1,2,3...]
@@ -181,7 +181,7 @@ que?Deep copy
 #write a python program to combine 2 dictionary by adding values for common keys
 
 
-<----------------------------Hard------------------->
+														HARD
 *EXCEPTTION HANDLING
 -errors
 	2 types-syntax error,indentation errpr
@@ -225,8 +225,9 @@ example,r=open("superman.txt",'w')
 		r.write("abc")
 		r.close()
 
+<<<<<<< HEAD
 
-<------------------Interesting---------------->
+															INTERESTING
 +=OOPS(Object oriented program)
 *imperative approach (ex,a=1 b=2 print(a+b))
 *functional approach (ex, def add(a,b) print(a+b))
@@ -273,3 +274,9 @@ example,r=open("superman.txt",'w')
 
 -TYPES OF ATTRIBUTE
 0
+=======
+//this is not useful from here
+Dhruv joshi
+muskan bhardwaj dixit
+to here
+>>>>>>> a6b5a1ba04e92fe8773235405a0ad281f2483db1
