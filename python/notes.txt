@@ -82,6 +82,7 @@ Arguments=the thing u provide to parameters
 		print(f"your name is {name} and your age is {age}")
 	hello('abc',18)			//positional argument
 
+<------------------Medium-------------->
 *DataStructure
 -List
 	syntax: a=[1,2,3...]
@@ -93,7 +94,7 @@ Traversing list
 //shortcut to access elements without indexing
 for i in a:
 	print(i)
-+=METHODS(print(dir(list)) //ismei sare list k matods dikh jayenge
++=METHODS ,print(dir(list)) //ismei sare list k matods dikh jayenge
 +=help(list)	//yea btayega methods mei kya use hota
 ='append' use case ,last mei add krne k liye,	l=[1,2,3,4]
 						l.append(6)
@@ -179,6 +180,8 @@ que?Deep copy
 #count the frequency of each elements
 #write a python program to combine 2 dictionary by adding values for common keys
 
+
+<----------------------------Hard------------------->
 *EXCEPTTION HANDLING
 -errors
 	2 types-syntax error,indentation errpr
@@ -221,3 +224,52 @@ print("abc")		//ab yea line print hogi
 example,r=open("superman.txt",'w')
 		r.write("abc")
 		r.close()
+
+
+<------------------Interesting---------------->
++=OOPS(Object oriented program)
+*imperative approach (ex,a=1 b=2 print(a+b))
+*functional approach (ex, def add(a,b) print(a+b))
+*oops approach
+
+-CLASSES(blueprint or templete for objects )
+	Syntax: class abc:
+				//attributes and methods 
+				a=12		//attriibute
+				
+				def hello():		//methods
+					print("Abx")
+				print("cde")
+			print(abc().a)		//a ko call krna
+			abc().hello()		//fx calling
+
+-OBJECTS
+		Syntax: class abc:
+				//attributes and methods 
+				a=12		//attriibute
+				
+				def hello(self):		//methods
+					print("Abx")
+				print("cde")
+			obj=abc()
+			print(obj.a)	or	obj.hello()
+
+-CONSTRUCTOR
+		//that runs automatically when we calls class and target the object location
+		class factory:
+			def_init_(self,material,zips,pockets):	//dender method
+			// self location farget target 	
+				self.material=material
+				self.zips=zips
+				self.pockets=pockets
+
+			def show(self):
+				print(f"your objects details are{self.material},{self.zips},{self.pockets})
+
+		rebok=factory("leather",3,2)	//rebok is object of company of leather
+		campus=factory("nylon",3,3)		//second object
+
+		rebok.show()
+
+-TYPES OF ATTRIBUTE
+0
