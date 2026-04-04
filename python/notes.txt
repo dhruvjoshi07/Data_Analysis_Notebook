@@ -302,10 +302,36 @@ example,r=open("superman.txt",'w')
 								
 							4-Pillars
 -Inheritance
+Syntax:
+	class factory:				#parent class
+		a="attribute"
+		def hello(self):
+			print("method")
 
+	class factorypune(factory)	#child class
+		pass
 
+	obj=factory()
+	obj2=factorypune(obj2.hello)
+	
+	print(obj.hello)
+=Constructor 
+	class Animal
+		def _init_(self,name):
+			self.name=name
+		def show(self):
+			print(f"hello your name is {self.name}")
+	
+	class Human(Animal):
+		pass
 
+	person1=Human("dhruv")
+	person2=Anmal("Muskan")
 
+	person1.show()
+
+=Types of Inheritance
+	
 
 
 
