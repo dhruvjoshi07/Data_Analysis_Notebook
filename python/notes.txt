@@ -478,9 +478,36 @@ class factory:
 			print("abc")
 	obj=circle(7)
 		
+													DUNDER METHODS
+-that start and end with double underscores,like__init__,__str__,__add__,etc.
+-they help u:
+	customize behaviour of class
+	make class objects behave like built-in data types(like list,str)
+=+METHOD 1:	__STR__
+class Animal:
+	def __init__(self,name):
+		self.name=name
+	def__str__(self):
+	return f"abc{self.name}"
+obj=Animal("lion")
+print(obj)
+=yea method seedha object print kr deta
 
+=+METHOD2:	__ADD__	#want to add 2 integers of 2 objects
+class Animal:
+	def __init__(self,name,age):
+		self.name=name
+		self.age=age
+	def__str__(self):
+		return f"abc{self.name}"
+	def __add__(self,other):
+		return f"sum of ages are {self.age+other.age}"
+obj=Animal("lion",22)
+obj2=Animal("dolphin",23)
+print(obj + obj2)
 
-
+											ADVANCED
+											
 
 
 
