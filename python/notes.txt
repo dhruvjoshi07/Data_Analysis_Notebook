@@ -329,19 +329,108 @@ Syntax:
 	person2=Anmal("Muskan")
 
 	person1.show()
+*super fx()=it target parent class 
+	class Animal:
+		def _init_(self,name):
+			self.name=name
+		def show(self):
+			print(f"hello your name is {self.name}")
+	
+	class human(animal):
+		def _init_(self,name,age):
+			super()._init_(name)
+			self.age=age
+		def show(self):
+			print(f"hello your name is {self.name}",{self.age})
+
+	animal1=Animaal("lion")
+	person=Human("abc",23)
 
 =Types of Inheritance
-	
+-Single inheritance
+-multiple inheritance
+	//there will be 2 parent class and one child and child have both access of parent class
+class Animal:
+	name1="lion"
+class Human:
+	name2="harsh"
+class Robots(Animal,Human):
+	name3="charlie123
+obj=Robots()
+print(obj.name1)
+
+or
+
+class Animal:
+	def __init__(self,name)
+	pass
+class Human:
+	def __init__(self,name,age)
+	pass
+class Robots(Animal,Human):	//animal aage rakhne se bs name dikhega print mei 
+							//but Human pehle rakhne se name,age dono puchega
+	name3="charlie123
+obj=Robots(	)
+
+-Multilevel Inheritance
+	//grandparents class then parent class then child class
+class factory:
+	def __init__(self,material,zips):
+		self.material=material
+		self.zips=zips
+class factorybhopal(factory):
+	def __init__(self,material,zips,color):
+		super().__init__(material,zips)
+		self.color=color
+class factorypune(factorybhopal):
+	def __init__(self,material,zips,color,pockets):
+		super.__init__(material,zips,color)
+		self.pockets=pockets
+
+obj=factorypune()
+
+-Hierachial inheritance
+	//ek class 2 child
+
+
+
+-POLYMORPHISM
+	//a same have diferent forms
+IMPORTANT NOTE:
+	THERE ARE TWO TYPES OF POLYMORPHISM BUT COMPILE TIME LANGUAGE(like c++,java) THERE ARE 3 WAYS 
+	BECAUSE PYTHON DOESNOT SUPPORT METHOD OVERLOADING
++=METHOD OVERRIDING
+class Animal:
+	def show(Self):
+		print("abc")
+
+//method overriding
+class Human(Animal):
+	def show(self)
+		print("cde")
+ 
+obj=Human()
+obj.show()
+
++=DUCK TYPING
+class Animal:
+	def show(Self):
+		print("abc")
+
+class Human:
+	def show(self)
+		print("cde")
+
+obj=Animal()
+obj2=Human()
+
+obj.show()
+obj2.show()
 
 
 
 
-
-
-
-
-
-
+-ENCAPSULATION
 
 
 
