@@ -431,8 +431,53 @@ obj2.show()
 
 
 -ENCAPSULATION
+	//it means putting variables and fx together in one piece
+why?	//it keeps data safe from being changed mistakely
+		//it gives ctrl over what others can access or change
+class factory:
+	a="pune"
+
+	def show(self):
+		print("abc)
+=+Access modifiers
+	means how we give access of our attribute and methods to object or inherited class
+	-types:
+		-public attribute
+		-protected attribute method = _a ,'_'lga do 
+			//baki lang mei access ni kr payenge but py mei naming convention ki tarh use
+		-private attribute method = __a,'__' yea access ni r payenge
+		example,	class factory:
+					__a="pune"
+
+					def __show(self):
+						print("abc")
+					obj=factory()
+					obj.__show()
 
 
+
+-ABSTRACTION
+	//it does not in python but we can use by library
+	from abc import ABC, abstractmethod
+	class abstract(ABC):	//ABC is a helper 
+		@abstractmethod		//decorater
+		def perimeter(self):
+			pass
+		@abstractmethod
+		def area(self):
+			pass
+	class square:
+		def __init__(self,side):
+			self.side=side
+	class circle(abstract):
+		def __init__(self,radius):
+			self.radius=radius
+		def perimeter(self):
+			print("abc")
+		def area(self):
+			print("abc")
+	obj=circle(7)
+		
 
 
 
