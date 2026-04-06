@@ -537,29 +537,62 @@ hello()
 	addition(12,12,23,45,23.........)
 
 -Kwargs(keyword args)(**)
-def information(**kwargs):
-	for i in kwargs:
-		print(f"{i}:{kwargs[i]}")
-information(name="dhruv",age=23,desigination="ai/ml")
-//yea hammei dicitionary form mei dega
+	def information(**kwargs):
+		for i in kwargs:
+			print(f"{i}:{kwargs[i]}")
+	information(name="dhruv",age=23,desigination="ai/ml")
+	//yea hammei dicitionary form mei dega
 
 -List,Dictionary and set comphrehension
-//we dont have to write multiple line of code for loops and conditions
+	//we dont have to write multiple line of code for loops and conditions
 #MAKE LIST FROM 1 TO 20
-l=[i for i in range(1,21) if i%2==0]
-print((l))
+	l=[i for i in range(1,21) if i%2==0]
+	print((l))
 #DICTIONARY from 1 to 10 and sqaure them as values of keys
-L={i:i**2 for i in range{1,10}}
-print(l)
+	L={i:i**2 for i in range{1,10}}
+	print(l)
 #set
-l={i*i for i in range(10)}
-print(l)
+	l={i*i for i in range(10)}
+	print(l)
 
 -LAMBDA FUNCTIONS
-lambda keyword
-	syntax:	add=lambda a,b : a+b
-	//we can use if else and ternary 
-			print(add(2,3))
+	lambda keyword
+		syntax:	add=lambda a,b : a+b
+		//we can use if else and ternary 
+				print(add(2,3))
+
+
+-MAP and FILTER
+MAP is used for applying a fx to multiple items and it take list(or any sequences)
+-elements k her value pr fx lag jaye
+	a=[1,2,3,4,5]
+	result=map(lambda x:x*2,a)	
+	print(list(result))
+or yea yhi hai bs old version
+	a=[1,2,3,4,5]
+	def double(x):
+		return x*2
+	result=map(double,a)
+	print(list(result))
+
+FILTER(true or false k liye jaada)
+//use for filtering
+	def even(x):
+		if x%2==0:
+			return true
+		else:
+			return false
+	a=[1,2,3,4,5]
+	result=filter(even,a)
+	print(list(result))
+or
+	a=[1,2,3,4,5]
+	result=filter(lambda x: True if x%2==0 else false,a)
+	print(list(result))
+
+
+-Modules and packages
+
 
 
 //this is not useful from here
