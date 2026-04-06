@@ -543,10 +543,23 @@ def information(**kwargs):
 information(name="dhruv",age=23,desigination="ai/ml")
 //yea hammei dicitionary form mei dega
 
+-List,Dictionary and set comphrehension
+//we dont have to write multiple line of code for loops and conditions
+#MAKE LIST FROM 1 TO 20
+l=[i for i in range(1,21) if i%2==0]
+print((l))
+#DICTIONARY from 1 to 10 and sqaure them as values of keys
+L={i:i**2 for i in range{1,10}}
+print(l)
+#set
+l={i*i for i in range(10)}
+print(l)
 
-
-
-
+-LAMBDA FUNCTIONS
+lambda keyword
+	syntax:	add=lambda a,b : a+b
+	//we can use if else and ternary 
+			print(add(2,3))
 
 
 //this is not useful from here
