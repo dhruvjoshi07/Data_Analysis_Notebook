@@ -507,7 +507,45 @@ obj2=Animal("dolphin",23)
 print(obj + obj2)
 
 											ADVANCED
-											
+-DECORATOR								
+A fx that modifies another fx without changing changing its actual code
+def decorate(func):
+	def wrapper(*args):			//*args so bar bar change na krne pade
+		print("i will print befor hello fx")
+		func()
+		print("i will print after hello fx")
+	return wrapper
+@decorate
+def hello():
+	print("hello this is dhruv")
+hello()
+
+
+-Args(*)
+	def addition(a,b,c,d)
+		print(a+b)
+	addition(12,12,23,56)
+	+=Ab user kitne bhi value mang skta bar bar use kr ni skte change in fx
+	thats why ha use krte '*args' ki le lo jitni value leni user ko add k liye
+	#ek tuple form k andar ho jayega
+	def addition(*args):
+		sum=0
+		for i in args:
+			sum=sum+i
+		print(sum)
+
+	addition(12,12,23,45,23.........)
+
+-Kwargs(keyword args)(**)
+def information(**kwargs):
+	for i in kwargs:
+		print(f"{i}:{kwargs[i]}")
+information(name="dhruv",age=23,desigination="ai/ml")
+//yea hammei dicitionary form mei dega
+
+
+
+
 
 
 
