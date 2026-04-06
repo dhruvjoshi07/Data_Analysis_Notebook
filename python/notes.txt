@@ -592,9 +592,17 @@ or
 
 
 -Modules and packages
+MODULES
+	import math
+		-print(maths.addition(12,12))
 
+PACKAGES
+	//that contains one or more packages
+	from folder import hello,math
+#folder k andar jakr folder se import krna toh
+	from folder.folder import hello,math
 
-
+	
 //this is not useful from here
 Dhruv joshi
 muskan bhardwaj dixit
