@@ -1,0 +1,13 @@
+*Notebooks
+A notebook is a special file(usually .ipynb) that lets:
+    write code
+    run code
+    see output
+    add notes,equations,images and charts-all ine one place
+
+*jupter kholo terminal mei
+    -cd "pth of folder"
+    -type = jupyter notebook
+    -new pr jakr python
+
+or folder pr click krke terinal mei bs jupyter notebook likh do
