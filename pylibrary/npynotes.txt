@@ -46,4 +46,6 @@ aur NumPy gap (step) apne aap calculate kar leta hai.
 
 *linespace
     yea hamesha deafult value 50 leta agar kuch na daale toh and it takes float val
+
+*now all notes in code
     
