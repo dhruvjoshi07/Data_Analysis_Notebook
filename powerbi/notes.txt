@@ -41,3 +41,5 @@ Section3:Model
 	understand and manipulate filter content
 	use dax functions to extend semantic models
 	create custom data table for time intelligence
+
+02-05-2026
