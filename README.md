@@ -5,7 +5,7 @@ in this i learn about pivot table,data cleaning,data wrangling and data visuliza
 #Topics Covered
 Advanced Excel-Data Cleaning,Data modelling,DAX,PowerPivot,PivotTable
 ,Advanced SQL
-,Power Bi-data visualization
+,Power Bi,tableu-data visualization
 ,Python-Pandas,numpy,matplotlib,seaborn,
 ,ipynb in jupyter notebook-cufflinks
 
