@@ -7,5 +7,5 @@ Advanced Excel-Data Cleaning,Data modelling,DAX,PowerPivot,PivotTable
 ,Advanced SQL
 ,Power Bi,tableu-data visualization
 ,Python-Pandas,numpy,matplotlib,seaborn,
-,ipynb in jupyter notebook-cufflinks
+,ipynb in jupyter notebook-cufflinks....
 
